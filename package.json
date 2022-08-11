@@ -1,6 +1,6 @@
 {
-  "name": "@ronnibaslund/nestjs-seq",
-  "version": "1.1.5",
+  "name": "@baslund/nestjs-seq",
+  "version": "1.1.6",
   "description": "Seq logging module for Nest framework (node.js)",
   "scripts": {
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
@@ -12,10 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jasonsoft/nestjs-seq.git"
+    "url": "git+https://github.com/ronnibaslund/nestjs-seq.git"
   },
   "keywords": [
-    "@ronnibaslund/nestjs-seq",
+    "@baslund/nestjs-seq",
     "nestjs-seq",
     "nestjs",
     "datalust",

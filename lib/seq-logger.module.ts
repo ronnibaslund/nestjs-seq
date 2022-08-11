@@ -7,22 +7,17 @@ import {
   SeqLoggerModuleOptionsFactory,
   SeqLoggerOptions,
 } from './interfaces';
-import {
-  JASONSOFT_SEQ_LOGGER,
-  JASONSOFT_SEQ_LOGGER_OPTIONS,
-} from './seq-logger.constants';
+import { SEQ_LOGGER, SEQ_LOGGER_OPTIONS } from './seq-logger.constants';
 import { SeqLogger } from './seq-logger.service';
 
 /**
- * JasonSoft Seq logger Module
- * Added by Jason.Song (成长的小猪) on 2021/07/05 16:44:10
+ * Seq logger Module
  */
 @Module({})
 export class SeqLoggerModule {
   /**
    * Static configuration
    * Register a globally available configuration for seq logger service.
-   * Added by Jason.Song (成长的小猪) on 2021/10/18 17:15:51
    * @param options Seq logger configuration object
    */
   static forRoot(options: SeqLoggerModuleOptions): DynamicModule {
@@ -31,7 +26,7 @@ export class SeqLoggerModule {
       global: options.isGlobal,
       providers: [
         {
-          provide: JASONSOFT_SEQ_LOGGER,
+          provide: SEQ_LOGGER,
           useFactory: () => {
             return this.createSeqLoggerOptions(options);
           },
@@ -50,7 +45,7 @@ export class SeqLoggerModule {
         serverUrl: options.serverUrl,
         apiKey: options.apiKey,
         onError: function (e: Error) {
-          console.error('[JasonSoft-Seq] Log batch failed\n', e);
+          console.error('[Seq] Log batch failed\n', e);
         },
       }),
     };
@@ -60,7 +55,6 @@ export class SeqLoggerModule {
   /**
    * Async configuration
    * Register a globally available configuration for the seq logger service.
-   * Added by Jason.Song (成长的小猪) on 2021/10/18 15:43:38
    * @param options Seq logger configuration async factory
    */
   static forRootAsync(options: SeqLoggerAsyncOptions): DynamicModule {
@@ -71,11 +65,11 @@ export class SeqLoggerModule {
       providers: [
         ...this.createAsyncProviders(options),
         {
-          provide: JASONSOFT_SEQ_LOGGER,
+          provide: SEQ_LOGGER,
           useFactory: (config: SeqLoggerModuleOptions) => {
             return this.createSeqLoggerOptions(config);
           },
-          inject: [JASONSOFT_SEQ_LOGGER_OPTIONS],
+          inject: [SEQ_LOGGER_OPTIONS],
         },
         SeqLogger,
         ConsoleSeqLogger,
@@ -105,14 +99,14 @@ export class SeqLoggerModule {
   ): Provider {
     if (asyncOptions.useFactory) {
       return {
-        provide: JASONSOFT_SEQ_LOGGER_OPTIONS,
+        provide: SEQ_LOGGER_OPTIONS,
         useFactory: asyncOptions.useFactory,
         inject: asyncOptions.inject || [],
       };
     }
 
     return {
-      provide: JASONSOFT_SEQ_LOGGER_OPTIONS,
+      provide: SEQ_LOGGER_OPTIONS,
       useFactory: async (optionsFactory: SeqLoggerModuleOptionsFactory) =>
         optionsFactory.createSeqLoggerOptions(),
       inject: [

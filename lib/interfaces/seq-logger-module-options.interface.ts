@@ -2,7 +2,6 @@ import { FactoryProvider, ModuleMetadata, Type } from '@nestjs/common';
 
 /**
  * Seq Logger Module Options interface
- * Added by Jason.Song (成长的小猪) on 2021/07/05 16:42:59
  */
 export interface SeqLoggerModuleOptions {
   /**
@@ -35,7 +34,6 @@ export interface SeqLoggerModuleOptionsFactory {
 
 /**
  * Seq Logger Module Async Options interface
- * Added by Jason.Song (成长的小猪) on 2021/10/18 15:26:56
  */
 export interface SeqLoggerAsyncOptions extends Pick<ModuleMetadata, 'imports'> {
   /**

@@ -1,17 +1,16 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { SeqLoggerOptions } from './interfaces';
-import { JASONSOFT_SEQ_LOGGER } from './seq-logger.constants';
+import { SEQ_LOGGER } from './seq-logger.constants';
 import * as os from 'os';
 import { SeqLogLevel, SeqEvent } from 'seq-logging';
 
 /**
- * JasonSoft Seq Logger Service
- * Added by Jason.Song (成长的小猪) on 2021/07/05 16:59:39
+ * Seq Logger Service
  */
 @Injectable()
 export class SeqLogger {
   constructor(
-    @Inject(JASONSOFT_SEQ_LOGGER)
+    @Inject(SEQ_LOGGER)
     private readonly seqLoggerOptions: SeqLoggerOptions,
   ) {}
 
@@ -41,7 +40,6 @@ export class SeqLogger {
 
   /**
    * Fix the error that properties are not assigned
-   * Updated by Jason.Song (成长的小猪) on 2021/09/08 11:29:21
    * @param level
    * @param messageTemplate
    * @param properties
