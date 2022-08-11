@@ -1,5 +1,4 @@
 <p align="center">
-  <a href="https://github.com/jasonsoft/" target="blank"><img src="https://avatars.githubusercontent.com/u/90173752?s=200&v=4" width="120" alt="JasonSoft Logo" /></a>
   <a href="http://nestjs.com/" target="blank"><img src="https://avatars.githubusercontent.com/u/28507035?s=200&v=4" width="120" alt="Nest Logo" /></a>
   <a href="https://datalust.co/" target="blank"><img src="https://datalust.co/img/seq-logo-dark.svg" height="120"  alt="datalust Logo" /></a>
 </p>
@@ -15,7 +14,7 @@ Seq logging module for Nest framework (node.js) 🐷
 ### Installation
 
 ```bash
-$ npm i --save @jasonsoft/nestjs-seq
+$ npm i --save @ronnibaslund/nestjs-seq
 ```
 
 ### Quick Start
@@ -28,15 +27,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 /**
  * Import the SeqLoggerModule into the root AppModule
- * Added by Jason.Song (成长的小猪) on 2021/09/08
  */
-import { SeqLoggerModule } from '@jasonsoft/nestjs-seq';
+import { SeqLoggerModule } from '@ronnibaslund/nestjs-seq';
 
 @Module({
   imports: [
     /**
      * we can import the SeqLoggerModule. Typically, we'll import it into the root AppModule and control its behavior using the .forRoot() static method.
-     * Added by Jason.Song (成长的小猪) on 2021/09/08
      */
     SeqLoggerModule.forRoot({
       /** Customize a log name to facilitate log filtering */
@@ -66,7 +63,6 @@ export class AppModule {}
  * Async configuration
  * When you need to pass module options asynchronously instead of statically, use the forRootAsync() method.
  * Like other factory providers, our factory function can be async and can inject dependencies through inject.
- * Added by Jason.Song (成长的小猪) on 2021/10/20 11:30:45
  */
 SeqLoggerModule.forRootAsync({
   imports: [ConfigModule],
@@ -87,9 +83,8 @@ import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 /**
  * import the SeqLogger
- * Added by Jason.Song (成长的小猪) on 2021/09/08
  */
-import { SeqLogger } from '@jasonsoft/nestjs-seq';
+import { SeqLogger } from '@ronnibaslund/nestjs-seq';
 
 @Controller()
 export class AppController {
@@ -98,7 +93,6 @@ export class AppController {
     /**
      * Inject the SeqLogger logger
      * We can also inject SeqLogger into controllers and services, etc.
-     * Added by Jason.Song (成长的小猪) on 2021/09/08
      */
     private readonly logger: SeqLogger,
   ) {}
@@ -129,15 +123,11 @@ export class AppController {
 
 > Seq is a centralized log file with superpowers. Check out the logs we collected
 
-![log rendering](https://github.com/jasonsoft/nestjs-seq/raw/main/rendering.jpg)
+![log rendering](https://github.com/ronnibaslund/nestjs-seq/raw/main/rendering.jpg)
 
-### Example
-
-[https://github.com/jasonsoft-net/nestjs-seq-example](https://github.com/jasonsoft-net/nestjs-seq-example)
-
-[npm-img]: https://img.shields.io/npm/v/@jasonsoft/nestjs-seq.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/@jasonsoft/nestjs-seq
+[npm-img]: https://img.shields.io/npm/v/@ronnibaslund/nestjs-seq.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@ronnibaslund/nestjs-seq
 [license-img]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [license-url]: LICENSE
-[downloads-image]: https://img.shields.io/npm/dt/@jasonsoft/nestjs-seq.svg?style=flat-square
+[downloads-image]: https://img.shields.io/npm/dt/@ronnibaslund/nestjs-seq.svg?style=flat-square
 [project-icon]: https://avatars.githubusercontent.com/u/22167571?v=4
