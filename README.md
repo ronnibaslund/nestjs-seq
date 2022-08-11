@@ -14,7 +14,7 @@ Seq logging module for Nest framework (node.js) 🐷
 ### Installation
 
 ```bash
-$ npm i --save @ronnibaslund/nestjs-seq
+$ npm i --save @baslund/nestjs-seq
 ```
 
 ### Quick Start
@@ -28,7 +28,7 @@ import { AppService } from './app.service';
 /**
  * Import the SeqLoggerModule into the root AppModule
  */
-import { SeqLoggerModule } from '@ronnibaslund/nestjs-seq';
+import { SeqLoggerModule } from '@baslund/nestjs-seq';
 
 @Module({
   imports: [
@@ -84,7 +84,7 @@ import { AppService } from './app.service';
 /**
  * import the SeqLogger
  */
-import { SeqLogger } from '@ronnibaslund/nestjs-seq';
+import { SeqLogger } from '@baslund/nestjs-seq';
 
 @Controller()
 export class AppController {
@@ -125,9 +125,9 @@ export class AppController {
 
 ![log rendering](https://github.com/ronnibaslund/nestjs-seq/raw/main/rendering.jpg)
 
-[npm-img]: https://img.shields.io/npm/v/@ronnibaslund/nestjs-seq.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/@ronnibaslund/nestjs-seq
+[npm-img]: https://img.shields.io/npm/v/@baslund/nestjs-seq.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@baslund/nestjs-seq
 [license-img]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [license-url]: LICENSE
-[downloads-image]: https://img.shields.io/npm/dt/@ronnibaslund/nestjs-seq.svg?style=flat-square
+[downloads-image]: https://img.shields.io/npm/dt/@baslund/nestjs-seq.svg?style=flat-square
 [project-icon]: https://avatars.githubusercontent.com/u/22167571?v=4
